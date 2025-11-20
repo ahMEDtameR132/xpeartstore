@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shop_app/pages/seatingpage.dart';
 import 'package:shop_app/pages/splash_page.dart';
 import 'package:shop_app/tools/apptextstyles.dart';
 
@@ -10,7 +11,18 @@ class ProfilePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("Profile"),
-        actions: [IconButton(icon: Icon(Icons.settings), onPressed: () {})],
+        actions: [
+          IconButton(
+            icon: Icon(Icons.settings),
+            onPressed: () {
+              // Navigate to settings page
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const Seatingpage()),
+              );
+            },
+          ),
+        ],
       ),
       body: Center(
         child: Padding(
@@ -46,7 +58,7 @@ class ProfilePage extends StatelessWidget {
                   );
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.red, // لون الزر
+                  backgroundColor: Colors.red,
                   padding: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
                 ),
                 child: Text("Log Out"),
